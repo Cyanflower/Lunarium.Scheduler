@@ -77,6 +77,7 @@ public class MyModuleService : IHostedService
 - **📝 完整日志**：集成 Microsoft.Extensions.Logging，记录任务执行详情
 - **🕐 异步释放**：`DisposeAsync` 等待所有任务完成后释放资源
 - **🖥️ 执行历史**：保留最近 10 次执行记录，含耗时、成功/失败状态
+- **🧩 多目标框架**：同时提供 net8.0 / net9.0 / net10.0 资产，按目标框架匹配 `Microsoft.Extensions.*` 主版本
 
 ## 📦 安装
 
@@ -550,9 +551,9 @@ public class ModuleService : IHostedService
 
 ## 🔗 依赖项
 
-- **.NET 9.0**
+- **.NET 8.0 / 9.0 / 10.0**（多目标框架，与 Lunarium.Logging 一致）
 - **Cronos** (v0.11.1)：用于解析 Cron 表达式
-- **Microsoft.Extensions.Logging.Abstractions** (v9.0.10)：日志抽象
+- **Microsoft.Extensions.Logging.Abstractions**：日志抽象，按目标框架匹配主版本（net8.0 → 8.0.x，net9.0 → 9.0.x，net10.0 → 10.0.x）
 
 ## 📄 许可证
 
